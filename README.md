@@ -60,3 +60,24 @@ Controller → Service → Repository → Entity
 ↓
 DTOs + Exceções customizadas
 \`\`\`
+
+## Autenticação
+
+A API usa JWT. Para acessar rotas protegidas:
+
+### 1. Cria uma conta
+\`\`\`
+POST /auth/register
+{ "nome": "Seu Nome", "email": "seu@email.com", "senha": "123456" }
+\`\`\`
+
+### 2. Faz login
+\`\`\`
+POST /auth/login
+{ "email": "seu@email.com", "senha": "123456" }
+\`\`\`
+
+### 3. Usa o token nas requisições
+\`\`\`
+Authorization: Bearer SEU_TOKEN_AQUI
+\`\`\`
